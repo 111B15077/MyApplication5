@@ -1,3 +1,4 @@
+//HIHIIHIHIHIH
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,3 +13,4 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 }
+//HIHIIHIHIHIH
