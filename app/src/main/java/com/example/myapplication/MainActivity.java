@@ -20,8 +20,10 @@ public class MainActivity extends AppCompatActivity {
         EditText weight = findViewById(R.id.etweight);
         double h = Double.parseDouble(height.getText().toString());
         double w = Double.parseDouble(weight.getText().toString());
+
         double bmi = w / (h/100.0 * h/100.0);
         String result = "你的BMI是 " + bmi;
+
         TextView show = findViewById(R.id.tvshow);
         show.setText(result);
     }
