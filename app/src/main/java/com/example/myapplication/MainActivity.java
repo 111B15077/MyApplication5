@@ -35,5 +35,6 @@ public class MainActivity extends AppCompatActivity {
     public void goNext(View view) {
         Intent intent = new Intent(this, ResulActivity.class);
         startActivity(intent);
+
     }
-}
+
