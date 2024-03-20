@@ -4,4 +4,6 @@
     <string name="buttona">計算</string>
     <string name="strHeight">請輸入身高</string>
     <string name="strWeight">請輸入體重</string>
+    <string name="strshowbmi">你的bmi是</string>
+    <string name="GoNext">下一頁</string>
 </resources>

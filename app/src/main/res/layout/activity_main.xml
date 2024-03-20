@@ -14,10 +14,12 @@
         android:layout_marginTop="84dp"
         android:layout_marginEnd="101dp"
         android:layout_marginBottom="12dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/strHeight"
         android:inputType="numberDecimal"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColorHint="#78909C"
         app:layout_constraintBottom_toTopOf="@+id/etweight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,10 +33,12 @@
         android:layout_marginTop="14dp"
         android:layout_marginEnd="102dp"
         android:layout_marginBottom="489dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/strWeight"
         android:inputType="numberDecimal"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColorHint="#78909C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +55,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etweight" />
+        app:layout_constraintTop_toBottomOf="@+id/etweight"
+        tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/tvshow"
@@ -65,4 +70,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btCalc"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btgotnext"
+        android:layout_width="151dp"
+        android:layout_height="72dp"
+        android:onClick="goNext"
+        android:text="Button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvshow"
+        tools:text="@string/GoNext" />
 </androidx.constraintlayout.widget.ConstraintLayout>

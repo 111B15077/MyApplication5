@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="buttona" >calculate</string>
-    <string name="strHeight" >Please enter your height</string>
-    <string name="strWeight" >Please enter your weight</string>
+    <string name="buttona">calculate</string>
+    <string name="strHeight">Please enter your height</string>
+    <string name="strWeight">Please enter your weight</string>
+    <string name="strshowbmi">What is your bmi</string>
+    <string name="GoNext" >Next</string>
 </resources>
