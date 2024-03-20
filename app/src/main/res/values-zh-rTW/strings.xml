@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="buttona">計算</string>
+    <string name="strHeight">請輸入身高</string>
+    <string name="strWeight">請輸入體重</string>
+</resources>
