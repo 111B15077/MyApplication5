@@ -12,29 +12,47 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
+    private EditText height;
+    private EditText weight;
+    private TextView show;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        findViews();
     }
 
     public void calcBMI(View view) {
+        double bmi = getBmi();
+        String result = getString(R.string.strshowbmi) + bmi;
+
+        show.setText(result);
+    }
+
+    private double getBmi() {
         DecimalFormat df = new DecimalFormat("0.00");
-        EditText height = findViewById(R.id.etHeight);
-        EditText weight = findViewById(R.id.etweight);
+
         double h = Double.parseDouble(height.getText().toString());
         double w = Double.parseDouble(weight.getText().toString());
 
         double bmi = w / (h / 100.0 * h / 100.0);
         bmi = Double.parseDouble(df.format(bmi));
-        String result = getString(R.string.strshowbmi) + bmi;
-        TextView show = findViewById(R.id.tvshow);
-        show.setText(result);
+        return bmi;
+    }
+
+    private void findViews() {
+        height = findViewById(R.id.etHeight);
+        weight = findViewById(R.id.etweight);
+        show = findViewById(R.id.tvshow);
     }
 
     public void goNext(View view) {
         Intent intent = new Intent(this, ResulActivity.class);
+        double bmi = getBmi();
+        intent.putExtra("bmi",bmi);
         startActivity(intent);
 
     }
+}
 
