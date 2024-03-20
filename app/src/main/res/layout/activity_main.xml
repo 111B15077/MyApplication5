@@ -75,11 +75,15 @@
         android:id="@+id/btgotnext"
         android:layout_width="151dp"
         android:layout_height="72dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="19dp"
         android:onClick="goNext"
         android:text="Button"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvshow"
         tools:text="@string/GoNext" />
 </androidx.constraintlayout.widget.ConstraintLayout>
