@@ -6,4 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".ResulActivity">
 
+    <TextView
+        android:id="@+id/tvshowbmi"
+        android:layout_width="196dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="306dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="306dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/ivshow"
+        android:layout_width="147dp"
+        android:layout_height="295dp"
+        app:srcCompat="@drawable/a1"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="387dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
