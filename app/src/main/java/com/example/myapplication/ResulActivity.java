@@ -18,10 +18,13 @@ public class ResulActivity extends AppCompatActivity {
         double bmi = getIntent().getDoubleExtra("bmi", 0);
         if (bmi < 18.5) {
             show.setText("體重過輕");
+            img.setImageResource(R.drawable.a1);
         } else if (bmi <= 24) {
             show.setText("體重正常");
+            img.setImageResource(R.drawable.a2);
         } else if (bmi > 24){
             show.setText("體重過重");
+            img.setImageResource(R.drawable.a3);
         }
         //        show.setText(String.valueOf(bmi));
     }
