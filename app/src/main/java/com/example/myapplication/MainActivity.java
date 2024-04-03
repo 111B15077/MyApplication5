@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -39,7 +40,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        cbapple.setOnCheckedChangeListener((buttonView, isChecked) -> getFruits());
+        cbbanana.setOnCheckedChangeListener((buttonView, isChecked) -> getFruits());
+        cborange.setOnCheckedChangeListener((buttonView, isChecked) -> getFruits());
+    }
 
+    private void getFruits() {
+        String msg = "";
+        if (cbapple.isChecked()) {
+            msg += "蘋果";
+        } else if (cbbanana.isChecked()) {
+            msg += "香蕉";
+        } else if (cborange.isChecked()) {
+            msg += "橘子";
+        }
+        show.setText("我喜歡吃"+msg);
     }
 
 
@@ -71,7 +86,12 @@ public class MainActivity extends AppCompatActivity {
         height = findViewById(R.id.etHeight);
         weight = findViewById(R.id.etweight);
         show = findViewById(R.id.tvshow);
+
         rbsex = findViewById(R.id.rbsex);
+
+        cbapple = findViewById(R.id.cbapple);
+        cbbanana = findViewById(R.id.cbbanana);
+        cborange = findViewById(R.id.cborange);
     }
 
 }
