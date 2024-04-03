@@ -5,4 +5,5 @@
     <string name="strWeight">Please enter your weight</string>
     <string name="strshowbmi">What is your bmi</string>
     <string name="GoNext" >Next</string>
+    <string name="btgoback" >back</string>
 </resources>

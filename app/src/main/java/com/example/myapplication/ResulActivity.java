@@ -28,4 +28,7 @@ public class ResulActivity extends AppCompatActivity {
         }
         //        show.setText(String.valueOf(bmi));
     }
+    public void onback(android.view.View view) {
+        finish();
+    }
 }
