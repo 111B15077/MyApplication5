@@ -10,17 +10,13 @@
         android:id="@+id/etHeight"
         android:layout_width="276dp"
         android:layout_height="88dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginTop="48dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/strHeight"
         android:inputType="numberDecimal"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColorHint="#78909C"
-        app:layout_constraintBottom_toTopOf="@+id/etweight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,17 +25,13 @@
         android:id="@+id/etweight"
         android:layout_width="278dp"
         android:layout_height="72dp"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="102dp"
-        android:layout_marginBottom="489dp"
+        android:layout_marginTop="28dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/strWeight"
         android:inputType="numberDecimal"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColorHint="#78909C"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etHeight" />
@@ -48,12 +40,11 @@
         android:id="@+id/btCalc"
         android:layout_width="156dp"
         android:layout_height="69dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:onClick="calcBMI"
         android:text="@string/buttona"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etweight"
         tools:ignore="TextSizeCheck" />
@@ -62,27 +53,86 @@
         android:id="@+id/tvshow"
         android:layout_width="291dp"
         android:layout_height="61dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginBottom="352dp"
+        android:layout_marginTop="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btCalc"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btCalc" />
 
     <Button
         android:id="@+id/btgotnext"
         android:layout_width="151dp"
         android:layout_height="72dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginBottom="16dp"
         android:onClick="goNext"
         android:text="@string/GoNext"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rbsex"
+        android:layout_width="wrap_content"
+        android:layout_height="79dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="61dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvshow" />
+        app:layout_constraintTop_toBottomOf="@+id/tvshow">
+
+        <RadioButton
+            android:id="@+id/rbMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男生"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <RadioButton
+            android:id="@+id/rbFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女生"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/cbapple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="24dp"
+        android:text="蘋果"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rbsex" />
+
+    <CheckBox
+        android:id="@+id/cbbanana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="香蕉"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rbsex" />
+
+    <CheckBox
+        android:id="@+id/cborange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="64dp"
+        android:text="橘子"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rbsex" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
