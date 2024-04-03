@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText height;
     private EditText weight;
     private RadioGroup rbsex;
-    private CheckBox cbapple;
-    private CheckBox cbbanana;
-    private CheckBox cborange;
+    private CheckBox apple;
+    private CheckBox banana;
+    private CheckBox orange;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,18 +40,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        cbapple.setOnCheckedChangeListener((buttonView, isChecked) -> getFruits());
-        cbbanana.setOnCheckedChangeListener((buttonView, isChecked) -> getFruits());
-        cborange.setOnCheckedChangeListener((buttonView, isChecked) -> getFruits());
+        apple.setOnCheckedChangeListener((buttonView, isChecked) -> getFruits());
+        banana.setOnCheckedChangeListener((buttonView, isChecked) -> getFruits());
+        orange.setOnCheckedChangeListener((buttonView, isChecked) -> getFruits());
     }
 
     private void getFruits() {
         String msg = "";
-        if (cbapple.isChecked()) {
+        if (apple.isChecked()) {
             msg += "蘋果";
-        } else if (cbbanana.isChecked()) {
+        } if (banana.isChecked()) {
             msg += "香蕉";
-        } else if (cborange.isChecked()) {
+        } if (orange.isChecked()) {
             msg += "橘子";
         }
         show.setText("我喜歡吃"+msg);
@@ -89,9 +89,9 @@ public class MainActivity extends AppCompatActivity {
 
         rbsex = findViewById(R.id.rbsex);
 
-        cbapple = findViewById(R.id.cbapple);
-        cbbanana = findViewById(R.id.cbbanana);
-        cborange = findViewById(R.id.cborange);
+        apple = findViewById(R.id.cbapple);
+        banana = findViewById(R.id.cbbanana);
+        orange = findViewById(R.id.cborange);
     }
 
 }
