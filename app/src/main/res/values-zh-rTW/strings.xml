@@ -7,4 +7,6 @@
     <string name="strshowbmi">你的bmi是</string>
     <string name="GoNext">下一頁</string>
     <string name="btgoback">返回</string>
+    <string name="strcalcOK">好</string>
+    <string name="strcalcCancel">取消</string>
 </resources>

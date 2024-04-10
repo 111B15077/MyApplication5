@@ -26,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox apple;
     private CheckBox banana;
     private CheckBox orange;
-
+    private  String[] sex = {"男生", "女生"};
+    private  String[] fruits = {"蘋果", "香蕉", "橘子"};
+    private  int sexIcon = 0;
+    private  boolean[] fruitsIcon = {false, false, false};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,19 +72,39 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("BMI");
         double bmi = getBmi();
         String result = getString(R.string.strshowbmi) + String.valueOf(bmi);
-        builder.setMessage(result);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//        builder.setMessage(result);
+//        builder.setSingleChoiceItems(sex, sexIcon, new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                sexIcon = which;
+//            }
+//        });
+        builder.setMultiChoiceItems(fruits, fruitsIcon, new DialogInterface.OnMultiChoiceClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(MainActivity.this, "你好", Toast.LENGTH_SHORT).show();
+            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                fruitsIcon[which] = isChecked;
             }
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.strcalcOK, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(MainActivity.this, "取消", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, sex[sexIcon], Toast.LENGTH_SHORT).show();
             }
         });
+        builder.setNegativeButton(R.string.strcalcCancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+//                Toast.makeText(MainActivity.this, "取消", Toast.LENGTH_SHORT).show();
+                String msg = "";
+                for (int i = 0; i < fruitsIcon.length; i++) {
+                    if (fruitsIcon[i]) {
+                        msg += fruits[i];
+                    }
+                }
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+            }
+        });
+//        builder.setMultiChoiceItems()
 
         builder.show();
 
