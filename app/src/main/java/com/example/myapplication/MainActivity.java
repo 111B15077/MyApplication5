@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -69,7 +70,19 @@ public class MainActivity extends AppCompatActivity {
         double bmi = getBmi();
         String result = getString(R.string.strshowbmi) + String.valueOf(bmi);
         builder.setMessage(result);
-        builder.setPositiveButton("OK", null);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "你好", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "取消", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         builder.show();
 
     }
