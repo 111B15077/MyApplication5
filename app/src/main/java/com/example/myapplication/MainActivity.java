@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
@@ -30,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         findViews();
 
+        myListener();
+    }
+
+    private void myListener() {
         rbsex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -57,13 +63,25 @@ public class MainActivity extends AppCompatActivity {
         show.setText("我喜歡吃"+msg);
     }
 
+    public void showDialog(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("BMI");
+        double bmi = getBmi();
+        String result = getString(R.string.strshowbmi) + String.valueOf(bmi);
+        builder.setMessage(result);
+        builder.setPositiveButton("OK", null);
+        builder.show();
+
+    }
 
     public void calcBMI(View view) {
         DecimalFormat df = new DecimalFormat("#.00");
 
         double bmi = getBmi();
         String result  = getString(R.string.strshowbmi) + String.valueOf(bmi);
-        show.setText(result);
+//        show.setText(result);
+        Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+
     }
 
     private double getBmi() {

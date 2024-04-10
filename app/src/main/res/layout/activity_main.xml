@@ -41,7 +41,7 @@
         android:layout_width="156dp"
         android:layout_height="69dp"
         android:layout_marginTop="24dp"
-        android:onClick="calcBMI"
+        android:onClick="showDialog"
         android:text="@string/buttona"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
