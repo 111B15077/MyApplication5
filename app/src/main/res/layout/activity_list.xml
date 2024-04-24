@@ -15,4 +15,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tvshow1"
+        android:layout_width="204dp"
+        android:layout_height="109dp"
+        android:layout_marginTop="36dp"
+        android:text="TextView"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SpFrulit" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
