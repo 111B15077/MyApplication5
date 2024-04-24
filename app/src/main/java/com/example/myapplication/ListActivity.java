@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,7 +21,6 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-
 
         List<String> list = new ArrayList<>();
         list.add("蘋果");
@@ -42,7 +42,7 @@ public class ListActivity extends AppCompatActivity {
         lvfruit.setAdapter(adapter);
 //        SpFrulit.setAdapter(adapter);
         lvfruit.setAdapter(adapter);
-
+//我不是要幾項，而是顯示有那些物品 例如點了蘋果 香蕉
         SpFrulit.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -58,7 +58,21 @@ public class ListActivity extends AppCompatActivity {
         lvfruit.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                tvshow1.setText(list.get(position));
+                // 获取ListView的选中状态
+                SparseBooleanArray checked = lvfruit.getCheckedItemPositions();
+                StringBuilder selectedItems = new StringBuilder();
+                for (int i = 0; i < checked.size(); i++) {
+                    // 如果该项被选中，则增加到selectedItems
+                    if (checked.valueAt(i)) {
+                        selectedItems.append(list.get(i)).append("、");
+                    }
+                }
+                // 移除最后一个顿号
+                if (selectedItems.length() > 0) {
+                    selectedItems.deleteCharAt(selectedItems.length() - 1);
+                }
+                // 更新tvshow1的文本
+                tvshow1.setText("你選擇了: " + selectedItems.toString());
             }
         });
 
