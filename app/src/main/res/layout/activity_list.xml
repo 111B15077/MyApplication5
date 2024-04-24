@@ -8,22 +8,36 @@
 
     <Spinner
         android:id="@+id/SpFrulit"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="407dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvshow1"
-        android:layout_width="204dp"
-        android:layout_height="109dp"
-        android:layout_marginTop="36dp"
-        android:text="TextView"
+        android:layout_width="414dp"
+        android:layout_height="83dp"
         android:gravity="center"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SpFrulit" />
+
+    <ListView
+        android:id="@+id/lvFruit"
+        android:layout_width="400dp"
+        android:layout_height="404dp"
+        android:layout_marginBottom="112dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvshow1"
+        app:layout_constraintVertical_bias="0.454" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
